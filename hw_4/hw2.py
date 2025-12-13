@@ -1,11 +1,18 @@
-def sr_arifm(*args):
-    s=0
-    for arf in args:
-    s+=arg
+def mean_opredelyator(*args):
+    s = 0
+    for arg in args:
+        s += arg
+    
+    return s / len(args)
 
-    return s/len(args)
 
-sr=sr_arifm(1,1,1,1,1,1,1,1,1)
-print(sr)
-def sr_arifm(*args):
-    return sum(args)
+mean = mean_opredelyator(1, 1, 1, 5, 4, 3)
+print(mean)
+
+
+def mean_opredelyator(*args):
+    return sum(args) / len(args)
+
+
+mean = mean_opredelyator(1, 1, 1, 5, 4, 3)
+print(mean)
