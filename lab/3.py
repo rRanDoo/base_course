@@ -1,12 +1,10 @@
-from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.animation import FuncAnimation
 
-
-def circle_move(R, angle_vel, time):
-    alpha = angle_vel * np.pi / 180 * time
-    x = R * np.cos(alpha)
-    y = R * np.sin(alpha)
+def circle_move(R, t):
+    x = np.sin(t)*(np.exp(np.cos(t))-2*np.cos(4*t)+ np.sin**5(t/12))
+    y = np.cos(t)*(np.exp(np.cos(t))-2*np.cos(4*t)+ np.sin**5(t/12))
     return x, y
 
 
@@ -14,8 +12,7 @@ fig, ax = plt.subplots()
 ball, = plt.plot([], [], 'o', color='r', label='Ball')
 ball_line, = plt.plot([], [], '-', color='r', label='Ball')
 
-frames = 180
-coords = np.zeros((frames, 2))
+coords = np.zeros((180, 2))
 
 
 def animate(i):
@@ -30,5 +27,5 @@ plt.axis('equal')
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-ani = FuncAnimation(fig, animate, frames=frames, interval=30)
-plt.show()
+ani = FuncAnimation (fig, animate, frames=180, interval=30)
+ani.save('ani.gif', writer="pillow")

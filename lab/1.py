@@ -12,13 +12,3 @@ def cikloida(R, t):
      plt.savefig('me.png')
 cikloida(3,1)
 
-
-def astroida(R, t):
-      t = np.arange(0, 18*np.pi, 0.01)
-      R=16
-      x = R * np.cos(t)**3
-      y =  R * np.sin(t)**3
-      plt.plot(x, y, ls='-', lw=3)
-      plt.axis('equal')
-      plt.savefig('me.png') 
-astroida(16, 1)
