@@ -3,4 +3,5 @@ n1=int(input('Введите первое число прогрессии: '))
 q=int(input('Введите знаменатель прогрессии: '))
 print(n1)
 for i in range(n-1):
-    
+    n1 = n1 * q  
+    print(n1)    
